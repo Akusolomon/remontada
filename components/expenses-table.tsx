@@ -58,7 +58,7 @@ export function ExpensesTable({ expenses, dateRange, onRefresh }: ExpensesTableP
     try {
       // Delete from the actual backend API
       // Adjust the endpoint based on your actual backend route
-      const response = await fetch(`http://localhost:3000/expenses/${id}`, {
+      const response = await fetch(`https://remontadaa.onrender.com/expenses/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

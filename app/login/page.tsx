@@ -42,7 +42,7 @@ export default function LoginPage() {
 
      useEffect(() => {
    
-     fetch("http://localhost:3000/user", {
+     fetch("https://remontadaa.onrender.com/user", {
         method: "GET",
         headers: { "Content-Type": "application/json"},
       }).then(res => res.json()).then(data => setUsers(data))

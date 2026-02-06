@@ -52,7 +52,7 @@ export function GameSalesTable({ gameSales, dateRange, onRefresh }: GameSalesTab
     try {
       // First, try to delete from the actual backend API
       // Adjust the endpoint based on your actual backend route
-      const response = await fetch(`http://localhost:3000/game/${id}`, {
+      const response = await fetch(`https://remontadaa.onrender.com/game/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

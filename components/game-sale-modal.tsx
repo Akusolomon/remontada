@@ -84,7 +84,7 @@ export function GameSaleModal({
    
 
       if (editingId && sale) {
-        const data = await fetch(`http://localhost:3000/game/${editingId}`, {
+        const data = await fetch(`https://remontadaa.onrender.com/game/${editingId}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -93,7 +93,7 @@ export function GameSaleModal({
           body: JSON.stringify(saleData),
         });
       } else {
-        await fetch('http://localhost:3000/game/add', {
+        await fetch('https://remontadaa.onrender.com/game/add', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

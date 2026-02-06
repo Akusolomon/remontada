@@ -81,7 +81,7 @@ export function ExpenseModal({
       };
 
       if (editingId && expense) {
-          const data = await fetch(`http://localhost:3000/expenses/${editingId}`, {
+          const data = await fetch(`https://remontadaa.onrender.com/expenses/${editingId}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export function ExpenseModal({
           body: JSON.stringify(expenseData),
         });
       } else {
-             await fetch('http://localhost:3000/expenses/add', {
+             await fetch('https://remontadaa.onrender.com/expenses/add', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

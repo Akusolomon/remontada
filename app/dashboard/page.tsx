@@ -59,7 +59,7 @@ export default function DashboardPage() {
     
 //     try {
 //       const response = await fetch(
-//         `http://localhost:3000/expenses/financial/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, 
+//         `https://remontadaa.onrender.com/expenses/financial/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, 
 //         {
 //           method: "GET",
 //           headers: { 
@@ -69,7 +69,7 @@ export default function DashboardPage() {
 //         }
 //       );
 //       const expense = await fetch(
-//         `http://localhost:3000/expenses?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, 
+//         `https://remontadaa.onrender.com/expenses?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, 
 //         {
 //           method: "GET",
 //           headers: { 
@@ -79,7 +79,7 @@ export default function DashboardPage() {
 //         }
 //       );
 //       const gameSales = await fetch(
-//         `http://localhost:3000/game?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, 
+//         `https://remontadaa.onrender.com/game?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, 
 //         {
 //           method: "GET",
 //           headers: { 
@@ -112,10 +112,10 @@ export default function DashboardPage() {
   try {
     // Fire all requests simultaneously
     const [finRes, expRes, gameRes, auditRes] = await Promise.all([
-      fetch(`http://localhost:3000/expenses/financial/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, { headers }),
-      fetch(`http://localhost:3000/expenses/expense/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, { headers }),
-      fetch(`http://localhost:3000/game/game/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, { headers }),
-      fetch(`http://localhost:3000/audit/from-to/${newRange.from.toISOString()}/${newRange.to.toISOString()}`, { headers })
+      fetch(`https://remontadaa.onrender.com/expenses/financial/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, { headers }),
+      fetch(`https://remontadaa.onrender.com/expenses/expense/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, { headers }),
+      fetch(`https://remontadaa.onrender.com/game/game/byDate?from=${newRange.from.toISOString()}&to=${newRange.to.toISOString()}`, { headers }),
+      fetch(`https://remontadaa.onrender.com/audit/from-to/${newRange.from.toISOString()}/${newRange.to.toISOString()}`, { headers })
     ]);
 
     // Parse all responses
