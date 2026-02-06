@@ -10,7 +10,6 @@ import { AuditLogComponent } from '@/components/audit-log';
 import { DashboardCharts } from '@/components/dashboard-charts';
 import { GameSaleModal } from '@/components/game-sale-modal';
 import { ExpenseModal } from '@/components/expense-modal';
-import { useData } from '@/lib/data-context';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import { LoadingSpinner } from '@/components/loading-spinner';
@@ -215,8 +214,8 @@ export default function DashboardPage() {
             </>
           )}
 
-          {/* Audit Log */}
-          // In page.tsx, update the AuditLogComponent usage:
+      
+          
 <AuditLogComponent 
   audit={auditStat || []} 
   dateRange={dateRange} // Pass the dateRange prop

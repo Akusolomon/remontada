@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { GameSale, useData } from '@/lib/data-context';
+import { GameSale } from '@/lib/data-context';
 import {
   Table,
   TableBody,
@@ -31,7 +31,6 @@ interface GameSalesTableProps {
 }
 
 export function GameSalesTable({ gameSales, dateRange, onRefresh }: GameSalesTableProps) {
-  const { deleteGameSale } = useData(); // This might be local/mock function
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string>();
   const [deleteId, setDeleteId] = useState<string>();
@@ -66,10 +65,7 @@ export function GameSalesTable({ gameSales, dateRange, onRefresh }: GameSalesTab
         throw new Error(errorData.message || `Failed to delete: ${response.statusText}`);
       }
 
-      // If backend deletion is successful, also update the local/mock data
-      if (deleteGameSale) {
-        deleteGameSale(id); // This updates the mock/context data
-      }
+    
 
       // Call refresh to get updated data from server
       if (onRefresh) {

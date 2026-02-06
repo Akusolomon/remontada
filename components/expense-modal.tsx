@@ -4,7 +4,7 @@ import React, { useEffect } from "react"
 
 import { useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
-import { useData, Expense } from '@/lib/data-context';
+import {  Expense } from '@/lib/data-context';
 import {
   Dialog,
   DialogContent,
@@ -52,7 +52,6 @@ export function ExpenseModal({
   onSuccess,
 }: ExpenseModalProps) {
   const { admin } = useAuth();
-  const { addExpense, updateExpense } = useData();
 
   const [category, setCategory] = useState<string>(expense?.category || 'OTHER');
   const [amount, setAmount] = useState(expense?.amount.toString() || '');

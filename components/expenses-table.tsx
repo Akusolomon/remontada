@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Expense, useData } from '@/lib/data-context';
+import { Expense } from '@/lib/data-context';
 import {
   Table,
   TableBody,
@@ -31,7 +31,6 @@ interface ExpensesTableProps {
 }
 
 export function ExpensesTable({ expenses, dateRange, onRefresh }: ExpensesTableProps) {
-  const { deleteExpense } = useData();
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string>();
   const [deleteId, setDeleteId] = useState<string>();
@@ -72,10 +71,6 @@ export function ExpensesTable({ expenses, dateRange, onRefresh }: ExpensesTableP
         throw new Error(errorData.message || `Failed to delete: ${response.statusText}`);
       }
 
-      // If backend deletion is successful, also update the local/mock data
-      if (deleteExpense) {
-        deleteExpense(id); // This updates the mock/context data
-      }
 
       // Call refresh to get updated data from server
       if (onRefresh) {
