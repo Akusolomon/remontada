@@ -135,10 +135,7 @@ export default function LoginPage() {
               {isLoading ? 'Logging in...' : 'Login'}
             </Button>
 
-            <div className="rounded-md bg-muted p-3 text-sm">
-              <p className="font-semibold text-foreground">Demo Credentials:</p>
-              <p className="text-muted-foreground">Password: pass123</p>
-            </div>
+    
           </form>
         </CardContent>
       </Card>
